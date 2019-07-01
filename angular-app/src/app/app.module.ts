@@ -3,12 +3,11 @@ import { HelloWorldComponent } from './component/HelloWorld/HelloWorld.component
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector } from '@angular/core';
 
-import { AppComponent } from './app.component';
 import { createCustomElement } from '@angular/elements'
 
 @NgModule({
   declarations: [
-    AppComponent,
+    // AppComponent,
     HelloWorldComponent
   ],
   imports: [
@@ -16,11 +15,13 @@ import { createCustomElement } from '@angular/elements'
   ],
   entryComponents: [HelloWorldComponent],
   providers: [],
-  bootstrap: [AppComponent]
+
+  // bootstrap: [AppComponent]
 })
 export class AppModule {
   constructor(injector: Injector) {
     const custom = createCustomElement(HelloWorldComponent, { injector });
     customElements.define('app-hello-world', custom);
   }
+  ngDoBootstrap() {}
 }
