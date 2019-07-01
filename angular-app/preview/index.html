@@ -1,6 +1,18 @@
 <html>
-  <body>
-    <app-hello-world></app-hello-world>
+
+
+<body>
+    <app-hello-world title="Batman" rname="Bruce Wayne" occupation="World's Greatest Detective" location="Gotham"
+        first="Detective Comics #27"></app-hello-world>
+
     <script src="./angularapp.js"></script>
-  </body>
+</body>
+<script>
+    const component = document.querySelector('app-hello-world');
+    component.addEventListener('display', (event) => {
+        console.log("in event!");
+        alert(event.detail);
+    });
+</script>
+
 </html>
